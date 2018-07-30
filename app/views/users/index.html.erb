@@ -1,0 +1,26 @@
+<h1>Bienvenidos 2018</h1>
+<table>
+    <tr>
+    <thead>
+    <th><strong>Nombre<strong></th>
+    <th><strong>Segundo_Nombre<strong></th>
+    <th><strong>Documento<strong></th>
+    <th><strong>Telefono<strong></th>
+    </thead>
+    </tr>
+
+    <tr>
+    <% @users.each do |user| %>
+        <td><%=user.name%></td>
+        <td><%=user.surname%></td>
+        <td><%=user.document%></td>
+        <td><%=user.telefono%></td>
+        <td>
+            <%= link_to "Editar", edit_users_path(user) %>
+            <%= link_to "Eliminar", delete_users_path(user), method: :delete %>
+        </td>
+    </tr>
+    
+    <% end %>
+    
+</table>
